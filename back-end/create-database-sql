@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS slothstagram ;
+CREATE USER slothstagram_admin WITH PASSWORD 'KristenBell';
+GRANT ALL PRIVILEGES ON DATABASE  TO slothstagram_admin;
