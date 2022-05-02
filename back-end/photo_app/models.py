@@ -1,14 +1,13 @@
 from django.db import models
-from stagram import models
-
-# Create your models here.
+from django.contrib.auth import User
 
 
 class Photo(models.Model):
-    caption = models.TextField()
+    caption = models.TextField(default=None, blank=True, null=True)
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='photos')
+        User, on_delete=models.CASCADE,
+        related_name='photos')
     url = models.URLField()
 
     def __str__(self):
-        return f'{self.caption}'
+        return f'{self.url}'
