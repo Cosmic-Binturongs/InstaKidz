@@ -84,7 +84,6 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 CORS_ALLOWED_ORIGINS = [
     "https://storied-blini-778bda.netlify.app/",
     "http://localhost:8080",
-    "http://127.0.0.1:9000"
 ]
 
 # Database
