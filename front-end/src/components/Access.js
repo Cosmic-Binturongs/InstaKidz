@@ -11,4 +11,4 @@ Sign up
 - Password input field 
 - Confirm Password input field 
 - Sign Up button 
-
+*/
