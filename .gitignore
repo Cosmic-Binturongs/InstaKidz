@@ -2,7 +2,7 @@
 
 
 # dependencies for react -- dont need to be inlcuded, gets included with npm install 
-front-end/slothstagram/node_modules
+front-end/node_modules
 /.pnp
 .pnp.js
 
