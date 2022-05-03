@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 from rest_framework import routers
-from stagram.views import UserViewSets
+from stagram.views import UserViewSet
 
 router = routers.DefaultRouter()
-router.register(f'user', UserViewSets)
+router.register(f'user', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

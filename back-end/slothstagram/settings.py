@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'stagram',
+    'photo_app',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +84,7 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 # CORS
 # https://www.stackhawk.com/blog/django-cors-guide/#enabling-cors-in-django
 CORS_ALLOWED_ORIGINS = [
-    "https://storied-blini-778bda.netlify.app/",
+    "https://storied-blini-778bda.netlify.app",
     "http://localhost:8080",
 ]
 
