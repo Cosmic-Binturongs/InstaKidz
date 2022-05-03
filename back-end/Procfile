@@ -1,1 +1,1 @@
-web: gunicorn developerverse_project.wsgi --log-file -
+web: gunicorn slothstagram.wsgi --log-file -
