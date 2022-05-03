@@ -1,0 +1,1 @@
+web: gunicorn slothstagram.wsgi --log-file -
