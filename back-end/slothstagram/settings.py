@@ -37,12 +37,14 @@ ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'photo_app',
     'corsheaders',
 ]
 
@@ -82,7 +84,7 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 # CORS
 # https://www.stackhawk.com/blog/django-cors-guide/#enabling-cors-in-django
 CORS_ALLOWED_ORIGINS = [
-    "https://storied-blini-778bda.netlify.app/",
+    "https://storied-blini-778bda.netlify.app",
     "http://localhost:8080",
 ]
 
