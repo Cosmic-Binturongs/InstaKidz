@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'photo_app',
     'corsheaders',
+    'stagram',
 ]
 
 MIDDLEWARE = [
