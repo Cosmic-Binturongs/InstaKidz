@@ -1,0 +1,1 @@
+web: gunicorn developerverse_project.wsgi --log-file -
