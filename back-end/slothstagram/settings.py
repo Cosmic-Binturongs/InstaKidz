@@ -42,9 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,6 +77,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'slothstagram.wsgi.application'
 
+# CORS
+# https://www.stackhawk.com/blog/django-cors-guide/#enabling-cors-in-django
+
+CORS_ALLOWED_ORIGINS = [
+    "https://storied-blini-778bda.netlify.app/",
+    "http://localhost:8080",
+    "http://127.0.0.1:9000"
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
