@@ -1,0 +1,33 @@
+# .github/workflows/build-heroku-app.yml // Just a comment
+name: Build App on Heroku
+on:
+  push: // type of event
+    branches:
+      - main # name of branch we want to listen to for event
+
+jobs:
+  heroku-pull-request:
+    runs-on: ubuntu-latest
+    env:
+      HEROKU_APP_NAME: slothstagram
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref_name }}
+
+      - name: Login to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+        #  heroku_api_key: ${{ secrets.HEROKU_API_KEY }} // Heroku API key
+          heroku_app_name: ${{ env.HEROKU_APP_NAME }} #// Declared above
+          justlogin: true
+
+      - name: Add Heroku remote
+        run: heroku git:remote --app=${{ env.HEROKU_APP_NAME }}
+
+      - name: Push to main branch app on Heroku
+        run: git push heroku ${{ github.ref_name }}:main --force
