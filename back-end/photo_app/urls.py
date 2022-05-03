@@ -8,5 +8,4 @@ router.register(r'user', PhotoViewSet)
 
 urlpatterns = [
   path('', include(router.urls)),
-  path('admin/', admin.site.urls)
 ]
