@@ -15,18 +15,17 @@ class UserViewSet(viewsets.ModelViewSet):
 import json 
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import require_POST
 
-@csrf_exempt
+@require_POST
 def login_view(request):
-  # json_data = json.loads(request.body)
-  # username = json_data.get('username')
-  # password = json_data.get('password')
-  # user = authenticate(username=username, password=password)
-  # if user is not None:
-  #   login(request, user)
-  #   return JsonResponse({'ok': True})
-  # else: 
-  #   return JsonResponse({'ok': False})
+  json_data = json.loads(request.body)
+  username = json_data.get('username')
+  password = json_data.get('password')
+  user = authenticate(username=username, password=password)
+  if user is not None:
+    login(request, user)
+    return JsonResponse({'ok': True})
+  else: 
+    return JsonResponse({'ok': False})
 
-  return JsonResponse({'ok': True})
