@@ -7,7 +7,7 @@ class Photo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='photos')
 
     def __str__(self):
-        return f'{self.url}'
+        return f'{self.caption}'
 
 
 class Profile(models.Model):
