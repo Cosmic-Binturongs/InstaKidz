@@ -1,7 +1,6 @@
 from rest_framework import viewsets
-from .serializers import UserSerializer
+from .serializers import UserSerializer, PhotoSerializer
 from django.contrib.auth.models import User
-from .serializers import PhotoSerializer
 from .models import Photo
 
 class PhotoViewSet(viewsets.ModelViewSet):
@@ -15,7 +14,7 @@ class UserViewSet(viewsets.ModelViewSet):
 import json 
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
-from django.views.decorators.csrf import require_POST
+from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.middleware.csrf import get_token
 
@@ -38,3 +37,15 @@ def login_view(request):
   else: 
     return JsonResponse({'ok': False})
 
+
+
+
+# tyler's test class code
+# from rest_framework import permissions
+# from rest_framework.views import APIView
+# from rest_framework.authentication import SessionAuthentication
+# class CheckAuth(APIView):
+#   authentication_classes = [SessionAuthentication]
+#   permission_classes = [permissions.IsAuthenticated]
+#   def get(self, request):
+#     return JsonResponse({'ok': True})
