@@ -129,6 +129,10 @@ Tyler Lane (they/them)
 
 `Contributor:` Andrew Manuel (he/him)
 
+[![](https://github.com/drainodrew.png?size=100)](https://github.com/drainodrew)
+
 `Contributor:` Lyndon St. Luce (he/him)
 
 `Contributor:` Melissa Minh Tran (she/her)
+
+[![](https://github.com/mcmtnyc.png?size=100)](https://github.com/mcmtnyc)
