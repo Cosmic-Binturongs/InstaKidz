@@ -21,7 +21,7 @@ class Photo(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE,
         related_name='photos')
-    url = models.URLField()
+    file = models.FileField()
     tags = ArrayField(models.CharField(max_length=25, blank=True))
 
     def __str__(self):
