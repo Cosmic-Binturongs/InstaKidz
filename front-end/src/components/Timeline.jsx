@@ -2,7 +2,7 @@
  */
 
 import React from 'react'
-import Navbar from './Navbar.jsx'
+import Navbar from './Navbar.js'
 import Post from './Post.jsx'
 
 function Timeline(props) {
