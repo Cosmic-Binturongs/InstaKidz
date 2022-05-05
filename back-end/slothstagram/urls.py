@@ -18,12 +18,7 @@ from django.urls import path, include
 
 from rest_framework import routers
 
-router = routers.DefaultRouter()
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('photo_app.urls')),
-    path('', include(router.urls)),
-
-
 ]
