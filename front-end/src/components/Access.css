@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+}
+
+.access {
+    background-color: red;
+    height: 40vw;
+    width: 40vw;
+}
