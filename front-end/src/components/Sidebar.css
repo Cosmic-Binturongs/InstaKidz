@@ -1,0 +1,19 @@
+.scroll{
+  width: 220px;
+  background-color: #f1f1f1;
+  height: 150px;
+  overflow: auto;
+  margin: 30px;
+  text-align: justify;
+  padding: 20px;
+ 
+}
+.item{
+   list-style-type: none;
+}
+.search-and-go {
+  display: inline-block;
+}
+.go-button {
+
+}
