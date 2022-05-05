@@ -6,8 +6,6 @@
     - View User Post (timeline page)
 */
 
-//import "./Button.css";
-
 function Button(props) {
   return (
     <div className={props.className}>
