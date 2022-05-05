@@ -102,7 +102,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 # Meet the Team
 
-`Project Manager`:
+`Project Manager:`
 Tyler Lane (they/them)
 
 [![](https://github.com/Underwaterr.png?size=100)](https://github.com/Underwaterr)
@@ -117,7 +117,13 @@ Tyler Lane (they/them)
 
 `Contributor:` James Thompson (he/him)
 
+`Contributor:` Melissa Minh Tran (she/her)
+
+[![](https://github.com/mcmtnyc.png?size=100)](https://github.com/mcmtnyc)
+
 `Contributor:` Emil Terrero (he/him)
+
+[![](https://github.com/emilterrero.png?size=100)](https://github.com/emilterrero)
 
 `Contributor:` Guangjian Bao (he/him)
 
@@ -127,12 +133,10 @@ Tyler Lane (they/them)
 
 [![](https://github.com/Linkevin1997.png?size=100)](https://github.com/Linkevin1997)
 
+`Contributor:` Lyndon St. Luce (he/him)
+
+[![](https://github.com/LyndonYRB.png?size=100)](https://github.com/LyndonYRB)
+
 `Contributor:` Andrew Manuel (he/him)
 
 [![](https://github.com/drainodrew.png?size=100)](https://github.com/drainodrew)
-
-`Contributor:` Lyndon St. Luce (he/him)
-
-`Contributor:` Melissa Minh Tran (she/her)
-
-[![](https://github.com/mcmtnyc.png?size=100)](https://github.com/mcmtnyc)
