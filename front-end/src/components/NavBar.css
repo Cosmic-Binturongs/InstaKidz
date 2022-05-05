@@ -1,4 +1,20 @@
 .navbar-div {
   background-color: black;
   color: white;
+  position: relative;
+}
+
+.navbar-div h2 {
+  display: inline-block;
+}
+
+.button {
+  display: flex;
+  background-color: #151515;
+  font-weight: 600;
+  display: inline-block;
+  position: absolute;
+  font-size: 40px;
+  margin: 0 100px 0 0;
+  right: 0;
 }
