@@ -6,17 +6,14 @@
     - View User Post (timeline page)
 */
 
-import React from 'react'
+//import "./Button.css";
 
 function Button(props) {
-
   return (
     <div className={props.className}>
-      <button onClick={props.onClick}>
-        {props.name}
-      </button>
+      <button onClick={props.onClick}>{props.name}</button>
     </div>
-  )
+  );
 }
 
-export default Button
+export default Button;
