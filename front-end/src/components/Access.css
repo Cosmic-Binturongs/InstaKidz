@@ -6,4 +6,42 @@
     background-color: red;
     height: 40vw;
     width: 40vw;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.enter-info {
+    background-color: white;
+    display: inline-block;
+}
+
+input {
+    display: block;
+    margin: 5px;
+}
+
+.bio-avatar {
+    background-color: grey;
+}
+
+.avatar {
+    border-radius: 100%;
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    z-index: 100;
+}
+
+.avatar:hover {
+    opacity: .5;
+}
+
+.signup-div {
+    background-color: green;
+}
+
+.access-btns {
+    background-color: pink;
+    display: inline-block;
 }
