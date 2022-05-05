@@ -1,5 +1,4 @@
 import './Access.css';
-import { useEffect } from 'react';
 
 function Access({access, 
     setAccess, 
@@ -20,7 +19,7 @@ function Access({access,
 }) {
 
     const handleClick = (click) => {
-        if (click.target.id === 'access-return-login' && access == false) {
+        if (click.target.id === 'access-return-login' && access === false) {
             setAccess(state => !state)
             setUsername('')
             setPassword('')
