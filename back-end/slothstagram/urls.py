@@ -17,14 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 from rest_framework import routers
-from photo_app.views import PhotoViewSet, UserViewSet
+from photo_app.views import UserViewSet
 
 router = routers.DefaultRouter()
-router.register(f'photo', PhotoViewSet)
-router.register(f'user', UserViewSet)
+router.register(r'user', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('photo_app.urls')),
+    path('', include(router.urls)),
 
 ]
