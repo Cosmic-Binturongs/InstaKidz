@@ -11,41 +11,49 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-import json 
-from django.contrib.auth import authenticate, login
+import json
+
+from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
+#from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import ensure_csrf_cookie
-from django.middleware.csrf import get_token
-
-
-@ensure_csrf_cookie
-def get_csrf_token(request):
-  json_response = JsonResponse({'ok': True})
-  json_response['X-CSRFToken'] = get_token(request)
-  return json_response
 
 @require_POST
 def login_view(request):
-  json_data = json.loads(request.body)
-  username = json_data.get('username')
-  password = json_data.get('password')
-  user = authenticate(username=username, password=password)
-  if user is not None:
+    data = json.loads(request.body)
+    username = data.get('username')
+    password = data.get('password')
+
+    if username is None or password is None:
+        return JsonResponse({'detail': 'Please provide username and password.'}, status=400)
+
+    user = authenticate(username=username, password=password)
+
+    if user is None:
+        return JsonResponse({'detail': 'Invalid credentials.'}, status=400)
+
     login(request, user)
-    return JsonResponse({'ok': True})
-  else: 
-    return JsonResponse({'ok': False})
+    return JsonResponse({'detail': 'Successfully logged in.'})
 
 
+def logout_view(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'detail': 'You\'re not logged in.'}, status=400)
+
+    logout(request)
+    return JsonResponse({'detail': 'Successfully logged out.'})
 
 
-# tyler's test class code
-# from rest_framework import permissions
-# from rest_framework.views import APIView
-# from rest_framework.authentication import SessionAuthentication
-# class CheckAuth(APIView):
-#   authentication_classes = [SessionAuthentication]
-#   permission_classes = [permissions.IsAuthenticated]
-#   def get(self, request):
-#     return JsonResponse({'ok': True})
+#@ensure_csrf_cookie
+def session_view(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'isAuthenticated': False})
+
+    return JsonResponse({'isAuthenticated': True})
+
+
+def whoami_view(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'isAuthenticated': False})
+
+    return JsonResponse({'username': request.user.username})
