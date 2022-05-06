@@ -10,14 +10,14 @@ const Template = (args) => <Timeline {...args} />
 const yourPostArr = [
   {
     userImg: "",
-    postImg: "",
+    postImg: "https://preview.redd.it/wm95xwfs3b201.jpg?auto=webp&s=4133378fdfe00d000631a7410023bf3d978339cc",
     caption: 'soccer shmoccer I like orange slices'
   },
   {
     userImg: "",
-    postImg: "",
+    postImg: "https://www.unlv.edu/sites/default/files/styles/1920_width/public/releases/main-images/ipad.jpg?itok=8vfunVci",
     caption: 'who wants to buy moms ipad?'
-  }
+  },
 ]
 
 const allPostArr = [
