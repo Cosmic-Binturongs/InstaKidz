@@ -66,7 +66,7 @@ ROOT_URLCONF = 'slothstagram.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [], #[os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 # CORS
 # https://www.stackhawk.com/blog/django-cors-guide/#enabling-cors-in-django
 CORS_ALLOWED_ORIGINS = [
-    "https://storied-blini-778bda.netlify.app",
+    "https://www.instakidz.com/",
     "http://localhost:8080",
 ]
 
@@ -144,7 +144,23 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 
+
+REST_FRAMEWORK = {
+  'DEFAULT_PERMISSION_CLASSES': [
+    'rest_framework.permissions.IsAuthenticated',
+  ],
+   'DEFAULT_AUTHENTICATION_CLASSES': [
+    'rest_framework.authentication.SessionAuthentication',
+  ]
+}
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#Authentication Settings 
+CSRF_COOKIE_HTTPONLY = False 
+CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
+
