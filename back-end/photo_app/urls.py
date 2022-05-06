@@ -5,8 +5,8 @@ from rest_framework import routers
 from .views import CheckAuthView, UserViewSet, PhotoViewSet, login_view, logout_view, session_view, whoami_view, signup_view, GetCSRFToken
 
 router = routers.DefaultRouter()
-router.register(f'photo', PhotoViewSet)
-router.register(f'user', UserViewSet)
+router.register(r'photo', PhotoViewSet)
+router.register(r'user', UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
