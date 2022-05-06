@@ -1,0 +1,11 @@
+scott - domain setup, design + mobile design
+andrew - back-end authentication, front-end login w/ Nasim
+emil - upload page form
+guangjian - front-end upload
+kevin - navbar stuff w/ James Router work
+lyndon - create user function
+ainsley - update the photo model to show user data
+nasim - work with anddrew on front-end login
+mel - css & classes! woo!
+james - react router!
+
