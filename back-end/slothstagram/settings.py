@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 # CORS
 # https://www.stackhawk.com/blog/django-cors-guide/#enabling-cors-in-django
 CORS_ALLOWED_ORIGINS = [
-    "https://storied-blini-778bda.netlify.app",
+    "https://www.instakidz.com/",
     "http://localhost:8080",
 ]
 
@@ -163,7 +163,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #CSRF_COOKIE_SAMESITE = 'Strict'
 # SESSION_COOKIE_SAMESITE = 'Strict'
-# #CSRF_COOKIE_HTTPONLY = False  # False since we will grab it via universal-cookies
+CSRF_COOKIE_HTTPONLY = False  # False since we will grab it via universal-cookies
+CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
+
 # SESSION_COOKIE_HTTPONLY = True
 
 # PROD ONLY
