@@ -1,8 +1,8 @@
-# Slothstagram
+# Instakidz
 
 ## Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Instakidz is a place for kids to hang out together in a safe, fun, and secure environment away from weirdos and the big bad mean INTERNET >=[. This app was designed in Figma and utilizes Python & Django for authentication, PostgresSQL to handle the database models, React for visually functional components and dynamically rendered states, and lastly Amazon S3 for image hosting.
 
 ## Technologies Used
 
@@ -84,7 +84,12 @@ This command will install all of the dependencies we are using for this project 
 
 ## Routes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+| Method | Endpoint | Description           |
+| ------ | -------- | --------------------- |
+| `GET`  | /photos  | Retrieves all photos. |
+| `GET`  | /user    | Retrieves all users.  |
+| `POST` | /photos  | Creates one photo.    |
+| `POST` | /user    | Creates one user.     |
 
 ## Back-end Deployment
 
