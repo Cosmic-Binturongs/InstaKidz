@@ -1,22 +1,14 @@
 import './Access.css';
+import {useState} from 'react';
 
-function Access({access, 
-    setAccess, 
-    username, 
-    setUsername, 
-    password, 
-    setPassword,
-    confirmPassword,
-    setConfirm,
-    parentEmail,
-    setParentEmail,
-    pronouns,
-    setPronouns,
-    birthday,
-    setBirthday,
-    avatar,
-    setAvatar
-}) {
+function Access() {
+    let [access, setAccess] = useState(true)
+    let [username, setUsername] = useState('')
+    let [password, setPassword] = useState('')
+    let [confirmPassword, setConfirm] = useState('')
+    let [parentEmail, setParentEmail] = useState('')
+    let [pronouns, setPronouns] = useState('')
+    let [avatar, setAvatar] = useState('')
 
     const handleClick = (click) => {
         if (click.target.id === 'access-return-login' && access === false) {
@@ -83,9 +75,10 @@ function Access({access,
             case 'av-6':
                 setAvatar(avi.target.id)
                 break;
-        default:
+            default:
                 setAvatar(avi.target.id)
         }
+        console.log(avatar)
     }
 
 
@@ -189,17 +182,17 @@ function Access({access,
 
         <div className='access-btns'>
         { access === true ?
-                <input
+            <input
             id='log-in-submit'
             type='submit'
             value='Login'
-                />
-                : 
-                <button 
+            />
+            : 
+            <button 
             onClick={handleClick}
             id='access-return-login'
-                > Return to Login 
-                </button>
+            > Return to Login 
+            </button>
         }
 
         { access === true ?
@@ -214,7 +207,7 @@ function Access({access,
             id='sign-up-submit'
             type='submit'
             value='submit'
-               />
+                />
         }
         </div>
         </div>
