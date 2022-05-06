@@ -33,6 +33,9 @@
       body: data
     }
     fetch('http://localhost:8000/login/', options)
+      .then(response=> { 
+        csrfToken = getCookie('csrftoken') 
+      })
   })
 
   testButton.addEventListener('click', function() {
@@ -51,6 +54,7 @@
     let data = new FormData()
     data.append("caption", "My cool pet")
     data.append("photo", imageInput.files[0])
+    data.append("user", 1)
     data.append("csrfmiddlewaretoken", csrfToken)
 
     let options = {
