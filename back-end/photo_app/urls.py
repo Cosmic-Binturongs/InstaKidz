@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from .views import CheckAuthView, UserViewSet, PhotoViewSet, login_view, logout_view, session_view, whoami_view, signup_view, GetCSRFToken
+from .views import CheckAuthView, UserViewSet, PhotoViewSet, login_view, logout_view, signup_view, GetCSRFToken
 
 router = routers.DefaultRouter()
 router.register(r'photo', PhotoViewSet)
