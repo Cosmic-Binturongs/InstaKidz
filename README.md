@@ -6,12 +6,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Technologies Used
 
+<p float="left">
 <img src="https://img.icons8.com/fluency/48/000000/python.png"/>
 <img src="https://img.icons8.com/color/48/000000/postgreesql.png"/>
 <img src="https://img.icons8.com/color/48/000000/django.png"/>
 <img src="https://img.icons8.com/color/48/000000/amazon-s3.png"/>
 <img src="https://img.icons8.com/dusk/48/000000/react.png"/>
 <img src="https://img.icons8.com/color/48/000000/figma--v1.png"/>
+</p>
 
 ## Initial set-up
 
@@ -126,6 +128,8 @@ Tyler Lane (they/them)
 [![](https://github.com/emilterrero.png?size=100)](https://github.com/emilterrero)
 
 `Contributor:` Guangjian Bao (he/him)
+
+[![](https://github.com/johndreamfuture.png?size=100)](https://github.com/johndreamfuture)
 
 `Contributor:` Nasim Akbor (he/him)
 
