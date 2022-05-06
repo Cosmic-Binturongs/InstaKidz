@@ -8,7 +8,6 @@ function Access() {
     let [confirmPassword, setConfirm] = useState('')
     let [parentEmail, setParentEmail] = useState('')
     let [pronouns, setPronouns] = useState('')
-    let [birthday, setBirthday] = useState('')
     let [avatar, setAvatar] = useState('')
 
     const handleClick = (click) => {
@@ -79,6 +78,7 @@ function Access() {
             default:
                 setAvatar(avi.target.id)
         }
+        console.log(avatar)
     }
 
 
