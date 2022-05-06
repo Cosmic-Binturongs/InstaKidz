@@ -1,10 +1,13 @@
 import Access from './components/Access.jsx';
-import {useState} from 'react';
+import { useState } from 'react';
+import Interface from './components/Interface.jsx';
+
+//
 
 function App() {
 
-    /* Session state will determine between logged in or not */
-
+  /* Session state will determine between logged in or not */
+  
     let [session, setSession] = useState(false);
     const testBtn = (e) => {
         setSession(sesh => !sesh)
@@ -12,8 +15,8 @@ function App() {
 
     return (
         <div className="App">
-        {!session ? <Access />
-            : <h1>You are sign in</h1>
+        {!session ? <Interface />
+            : <Access state='nahfam'/>
         }
 
         { /* Test Button just to switch between session states */ }

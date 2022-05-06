@@ -6,18 +6,22 @@ import { Routes, Route } from 'react-router-dom';
 import Button from './Button.jsx';
 
 
-
 function Interface() {
+
+  const logOut = () => {
+    console.log("we have logged out");
+  }
+
   return (
     <div>
       <Navbar />
-      
+      <Sidebar />
       <Routes>
         <Route path="/" element={<Timeline state={'allPosts'} />} />
         <Route path="/profile" element={<Timeline state={'profilePosts'} />} />
-        <Route path="/upload" element={<Upload />} />
+        <Route path="/upload" element={<h1>UPLOAD THING</h1>} />
       </Routes>
-      <Button name={''} onClick={ } className={ } />
+      <Button name={'Logout'} onClick={logOut}/>
       
       
     </div>

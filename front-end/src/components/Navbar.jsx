@@ -2,14 +2,23 @@
  */
 import "./NavBar.css";
 import { Link } from "react-router-dom";
+import Button from "./Button";
+
+
 function Navbar() {
+
+  const logOut = () => {
+    console.log("we have logged out");
+  }
+
+
   return (
     <div className="navbar-div">
       <nav>
         <Link to="/">Home</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/upload">Upload</Link>
-        <Button name='Logout' onClick={ } className={ }/> 
+        <Button name='Logout' onClick={ logOut }/> 
       </nav>
     </div>
   );
