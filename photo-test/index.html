@@ -1,0 +1,73 @@
+<button id="token-button">Get CSRF Token</button>
+<button id="login-button">Log In</button>
+<button id="test-button">Test</button>
+<input id="image-input" type="file" name="photo">
+<button id="upload-button">Upload Image</button>
+
+<script src="get-cookie.js"></script>
+<script>
+  let tokenButton = document.getElementById('token-button')
+  let loginButton = document.getElementById('login-button')
+  let testButton = document.getElementById('test-button')
+  let imageInput = document.getElementById('image-input')
+  let uploadButton = document.getElementById('upload-button')
+
+  let csrfToken = null
+  tokenButton.addEventListener('click', function() {
+    fetch('http://localhost:8000/csrf-cookie/', { credentials: 'include' })
+      .then(response=> { 
+        csrfToken = getCookie('csrftoken') 
+      })
+  })
+
+  loginButton.addEventListener('click', function() {
+    // Sending form data
+    let data = new FormData()
+    data.append("username", "admin")
+    data.append("password", "admin")
+
+    let options = {
+      method: 'POST',
+      headers: { "X-CSRFToken": csrfToken },
+      credentials: 'include',
+      body: data
+    }
+    fetch('http://localhost:8000/login/', options)
+      .then(response=> { 
+        csrfToken = getCookie('csrftoken') 
+      })
+  })
+
+  testButton.addEventListener('click', function() {
+    let options = {
+      headers: { "X-CSRFToken": csrfToken },
+      credentials: 'include'
+    }
+    fetch('http://localhost:8000/test/', options)
+      .then(response=> response.json())
+      .then(data=> console.log(data))
+  })
+
+  uploadButton.addEventListener('click', function() {
+
+    // Sending form data
+    let data = new FormData()
+    data.append("caption", "My cool pet")
+    data.append("photo", imageInput.files[0])
+    data.append("user", 1)
+    data.append("csrfmiddlewaretoken", csrfToken)
+
+    let options = {
+      method: 'POST',
+      headers: { "X-CSRFToken": csrfToken },
+      credentials: 'include',
+      body: data
+    }
+
+    fetch('http://localhost:8000/photo/', options)
+      .then(response=>response.json())
+      .then(data=>console.log(data))
+      .catch(error=>console.error(error))
+  })
+
+</script>
