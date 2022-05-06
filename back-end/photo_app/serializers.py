@@ -2,13 +2,16 @@ from rest_framework import serializers
 from .models import Photo
 from django.contrib.auth.models import User
 
+
+
 class PhotoSerializer(serializers.ModelSerializer):
+    user = PhotoUserSerializer()
     class Meta:
         model = Photo
         fields = '__all__'
 
-class UserSerializer(serializers.ModelSerializer): 
-    class Meta:
+class UserSerializer(serializers.ModelSerializer):
+     class Meta:
         model = User
         fields = ['id', 'username', 'password']
         extra_kwargs = {'password': {'write_only': True, 'required': True}}
