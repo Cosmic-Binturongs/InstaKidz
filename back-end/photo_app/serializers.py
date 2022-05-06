@@ -4,10 +4,10 @@ from django.contrib.auth.models import User
 
 
 class PhotoSerializer(serializers.ModelSerializer):
+    user = PhotoUserSerializer()
     class Meta:
         model = Photo
         fields = '__all__'
-
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,5 +16,5 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True, 'required': True}}
 
     def create(self, validated_data):
-      user = User.objects.create_user(**validated_data)
-      return user
+        user = User.objects.create_user(**validated_data)
+        return user
