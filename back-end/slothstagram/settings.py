@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 # CORS
 # https://www.stackhawk.com/blog/django-cors-guide/#enabling-cors-in-django
 CORS_ALLOWED_ORIGINS = [
-    "https://www.instakidz.com/",
+    "https://www.instakidz.com",
     "http://localhost:8080",
 ]
 
