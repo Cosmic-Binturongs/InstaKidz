@@ -22,8 +22,7 @@
     ],
     "overrides": [
       {
-        "files": [
-        ],
+        "files": [""],
         "rules": {
           "import/no-anonymous-default-export": "off"
         }
