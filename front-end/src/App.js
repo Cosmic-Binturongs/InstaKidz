@@ -1,4 +1,5 @@
 import Access from './components/Access.jsx';
+import Upload from './components/Upload.jsx';
 import {useState} from 'react';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     /* Session state will determine between logged in or not */
 
     let [session, setSession] = useState(false);
+
     const testBtn = (e) => {
         setSession(sesh => !sesh)
     }
@@ -13,7 +15,7 @@ function App() {
     return (
         <div className="App">
         {!session ? <Access />
-            : <h1>You are sign in</h1>
+            : <Upload session={session}/> 
         }
 
         { /* Test Button just to switch between session states */ }
