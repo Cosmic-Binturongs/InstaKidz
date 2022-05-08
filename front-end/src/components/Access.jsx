@@ -2,157 +2,167 @@ import './Access.css';
 import {useState} from 'react';
 
 function Access() {
+    
+    /* Three States made in total
+    State 1: Identify whether user is signed in or not
+    State 2: Holds the login info as an object
+    State 3: Holds the sign up info as an object
+    */
+
     let [access, setAccess] = useState(true)
-    let [username, setUsername] = useState('')
-    let [password, setPassword] = useState('')
-    let [confirmPassword, setConfirm] = useState('')
-    let [parentEmail, setParentEmail] = useState('')
-    let [pronouns, setPronouns] = useState('')
-    let [avatar, setAvatar] = useState('')
+    let [loginInfo, setLogin] = useState({})
+    let [signUpInfo, setSignUp] = useState({})
 
+    /* This function simply switches between logged in state or not */
     const handleClick = (click) => {
-        if (click.target.id === 'access-return-login' && access === false) {
-            setAccess(state => !state)
-            setUsername('')
-            setPassword('')
-            setConfirm('')
-        } else if (click.target.id === 'access-login' && access === true) {
-            console.log('you have logged in') 
-        } else if (click.target.id === 'access-sign-up' && access === true) {
-            setAccess(state => !state)
-            setUsername('')
-            setPassword('')
-            setConfirm('')
-        } else if (click.target.id === 'access-sign-up' && access === false) {
-            console.log('you have signed up') 
-        }
+        setAccess(state => !state)
     }
 
-    const handleInfo = (input) => {
-        switch(input.target.id) {
-            case 'username':
-                setUsername(input.target.value)
-                break;
-            case 'password':
-                setPassword(input.target.value)
-                break;
-            case 'confirm-password':
-                setConfirm(input.target.value)
-                break;
-            case 'parent-email':
-                setParentEmail(input.target.value)
-                break;
-            case 'pronouns': 
-                setPronouns(input.target.value)
-                break;
-            default:
-                setUsername('')
-                setPassword('')
-                setConfirm('')
-                setParentEmail('')
-                setPronouns('')
-
-        }
-    }
-
+    /* This currently has no function, but it is used to pick user avatar */
     const chooseAvi = (avi) => {
         switch(avi.target.id) {
             case 'av-1':
-                setAvatar(avi.target.id)
                 break;
             case 'av-2':
-                setAvatar(avi.target.id)
                 break;
             case 'av-3':
-                setAvatar(avi.target.id)
                 break;
             case 'av-4':
-                setAvatar(avi.target.id)
                 break;
             case 'av-5':
-                setAvatar(avi.target.id)
                 break;
             case 'av-6':
-                setAvatar(avi.target.id)
                 break;
             default:
-                setAvatar(avi.target.id)
         }
-        console.log(avatar)
     }
 
 
+    /* LoginSubmitBtn function will set the loginInfo state to the login Object */
+    let loginSubmitBtn = (e) => {
+        e.preventDefault()
+        let userInput = document.getElementById('username')
+        let passwordInput = document.getElementById('password')
+        setLogin({'username': userInput.value, 'password': passwordInput.value}) 
+
+        /* This FormData is what will be used to make requests? */
+        let loginData = new FormData()
+        loginData.append('username', loginInfo.username)
+        loginData.append('password', loginInfo.password)
+    }
+
+    /* SignUpSubmit function will set the signUpInfo state to the sign up Object */
+    let signUpSubmit = (e) => {
+        console.log('Submit Pressed')
+        let userInput = document.getElementById('username')
+        let passwordInput = document.getElementById('password')
+        let confirmInput = document.getElementById('passConfirm')
+        let parentInput = document.getElementById('parentEmail')
+        let pronounsInput = document.getElementById('pronouns')
+        let birthdayInput = document.getElementById('birthday') 
+        let bioInput = document.getElementById('bio')
+
+        setSignUp({
+            'username': userInput.value,
+            'password': passwordInput.value,
+            'passConfirm': confirmInput.value,
+            'parentEmail': parentInput.value,
+            'pronouns': pronounsInput.value,
+            'birthday': birthdayInput.value,
+            'bio': bioInput.value
+        })
+
+        /* This FormData is what will be used to make requests? */
+        let signUpData = new FormData()
+        signUpData.append('username', signUpInfo.username) 
+        signUpData.append('password', signUpInfo.password) 
+        signUpData.append('confirmPassword', signUpInfo.passConfirm) 
+        signUpData.append('parentEmail', signUpInfo.parentEmail) 
+        signUpData.append('pronouns', signUpInfo.pronouns) 
+        signUpData.append('birthday', signUpInfo.birthday) 
+        signUpData.append('bio', signUpInfo.bio) 
+
+    }
+
+    /* For some reason if you console.log() the info States when you submit, it doesn't update immediately */
     return (
         <div className='access'>
         {access ? 
             <div className='login-div'>
-            <form>
+            <form id='loginForm'>
 
             <input 
-            onChange={handleInfo}
             htmlFor='username'
             id='username'
             type='text'
             placeholder='username'
-            value={ username }/>
+            />
 
             <input 
-            onChange={handleInfo}
             htmlFor='password'
             id='password'
             type='password'
             placeholder='password'
-            value={password}/>
+            />
+
             </form>
+            <button
+            onClick={loginSubmitBtn}
+            >
+            Login
+            </button>
+
+
+            <button
+            onClick={handleClick}
+            id='access-sign-up'
+            >
+            Sign Up
+            </button>
+
             </div>
 
             : 
             <div className='signup-div'>
 
-            <form>
+            <form id='signUpForm'>
             <div className='enter-info'>
             <input 
-            onChange={handleInfo}
             htmlFor='username'
             id='username'
             type='text'
             placeholder='create username'
-            value={ username }/>
+            />
 
             <input
-            onChange={handleInfo}
             htmlFor='password'
             id='password'
             type='password'
             placeholder='create password'
-            value={ password }/>
+            />
 
             <input
-            onChange={handleInfo}
             htmlFor='confirm password'
-            id='confirm-password'
+            id='passConfirm'
             type='password'
             placeholder='confirm password'
-            value={ confirmPassword }/>
+            />
 
             <input
-            onChange={handleInfo}
             htmlFor='parent email'
-            id='parent-email'
+            id='parentEmail'
             type='text'
             placeholder='parent email'
-            value={parentEmail}/>
+            />
 
             <input
-            onChange={handleInfo}
             htmlFor='pronouns'
             id='pronouns'
             type='text'
             placeholder='pronouns'
-            value={pronouns}/>
+            />
 
             <input
-            onChange={handleInfo}
             htmlFor='birthday'
             id='birthday'
             type='date'
@@ -169,6 +179,7 @@ function Access() {
             <div id='av-5' className='avatar' onClick={chooseAvi}></div>
             <div id='av-6' className='avatar' onClick={chooseAvi}></div>
             <textarea 
+            id = 'bio'
             placeholder='Please tell us about yourself! :)'
             rows='5'
             cols='30'
@@ -177,39 +188,20 @@ function Access() {
             </div>
             </form>
 
-            </div>
-        }
-
-        <div className='access-btns'>
-        { access === true ?
-            <input
-            id='log-in-submit'
-            type='submit'
-            value='Login'
-            />
-            : 
             <button 
+            onClick={signUpSubmit}
+            >
+            Sign Up
+            </button>
+
+            <button
             onClick={handleClick}
             id='access-return-login'
-            > Return to Login 
+            > Return to Login
             </button>
-        }
 
-        { access === true ?
-                <button
-            onClick={handleClick}
-            id='access-sign-up'
-                >
-                Sign Up
-                </button>
-                :
-                <input 
-            id='sign-up-submit'
-            type='submit'
-            value='submit'
-                />
+            </div>
         }
-        </div>
         </div>
 
     )
