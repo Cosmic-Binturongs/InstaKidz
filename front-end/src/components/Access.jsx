@@ -82,6 +82,14 @@ function Access() {
     }
 
 
+  
+  const onSubmit = e => { 
+    e.preventDefault();
+
+    if (password === confirmPassword) {
+      
+    }
+    }
     return (
         <div className='access'>
         {access ? 
