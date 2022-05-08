@@ -86,6 +86,7 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 CORS_ALLOWED_ORIGINS = [
     "https://www.instakidz.com",
     "http://localhost:8080",
+    "http://localhost:3000"
 ]
 
 # Database
