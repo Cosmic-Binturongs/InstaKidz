@@ -7,7 +7,14 @@ import Button from './Button.jsx';
 import { useState, useEffect } from 'react';
 
 
-function Interface() {
+function Interface(props) {
+
+  const [profile, setProfile] = useState({});
+
+  useEffect(() => {
+    setProfile(props.profile)
+
+  },[props])
 
   const logOut = () => {
     console.log("we have logged out");
@@ -16,7 +23,7 @@ function Interface() {
   return (
     <div>
       <Navbar />
-      <Sidebar />
+      <Sidebar  />
       <Routes>
         <Route path="/" element={<Timeline state={'allPosts'} />} />
         <Route path="/profile" element={<Timeline state={'profilePosts'} />} />
