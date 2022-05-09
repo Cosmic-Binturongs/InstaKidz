@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import getCookie from '../get-cookie.js';
+//import './Upload.css';
 
-function Upload({session}) {
-    //let [uploadInfo, setUpload] =  useState({})
+function Upload() {
+  // let [uploadInfo, setUpload] =  useState({})
+  const image = useRef(null);
 
+    //fetch cookie function
     let csrfToken = null
     const fetchCookie = () => {
         fetch('http://localhost:8000/csrf-cookie/', { credentials: 'include' })
-        .then(response=> { 
+        .then( response => { 
             csrfToken = getCookie('csrftoken') 
             console.log(csrfToken)
         })
@@ -25,29 +28,30 @@ function Upload({session}) {
     }
 
     fetch('http://localhost:8000/login/', options)
-    .then(response=> { 
+    .then( response=> { 
         csrfToken = getCookie('csrftoken') 
         console.log(csrfToken)
     })
-    }
+  }
     
-    useEffect(() => {
-        fetchCookie();
-    }, [])
+  useEffect(() => {
+    fetchCookie();
+  }, [])
 
-    let image = document.getElementById('img-input')
 
-    let handleSubmit = (e) => {
+  let handleSubmit = (e) => {
         e.preventDefault()
+    image.current.focus();
         let formData = new FormData()
         formData.append('caption', e.target.caption.value)
-        formData.append('image', image)
+        formData.append('image', image.current)
+      //will this require us carry the state of the user?
         formData.append('user', 1)
         formData.append('csrfmiddlewaretoken', csrfToken)
 
         let options = {
             method: 'POST',
-            headers: {'X-CSRFToken': csrfToken},
+            headers: {'X-CSRFToken': csrfToken },
             credentials: 'include',
             body: formData
         }
@@ -56,32 +60,22 @@ function Upload({session}) {
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(error => console.error(error))
-
     }
 
 
     return (
-        <div className='uploadDiv'>
-        <h2>Upload Image Page</h2>
-        <form onSubmit={handleSubmit}>
-
-        <input 
-        id='img-input' 
-        type='file' 
-        name='photo'/>
-
-        <input 
-        id='img-caaption' 
-        type='text' 
-        name='caption' 
-        placeholder='Caption'/>
-
-        <input
-        type='submit'
-        />
-
-        </form>
-        </div>
+      <div class="uploadDiv">
+      <form onSubmit={handleSubmit} ref={image}>
+        <input id="image-input" type="file" name="photo" class="style-this"/>
+        <input id='img-caption' type='text' name='caption' placeholder='Caption'/>
+        <input type='submit'/>
+      </form>
+      <br/>
+      <h1>Add Memory</h1>
+      <p>Click to upload image</p>
+      <p>(5MB Maximum, JPEG and PNG supported)</p>
+      <p class="h1">Upload Image</p>
+      </div> 
     )
 }
 export default Upload;

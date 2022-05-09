@@ -1,30 +1,49 @@
 import Access from './components/Access.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Interface from './components/Interface.jsx';
+import Upload from './components/Upload.jsx';
 
-//
+
 
 function App() {
-
-  /* Session state will determine between logged in or not */
   
   const [profile, setProfile] = useState('empty');
   const [session, setSession] = useState(false);
   
-  const testBtn = (e) => {
-        setSession(sesh => !sesh)
+  let csrfToken = null;
+  const checkSession = () => {
+    let options = {
+      headers: { "X-CSRFToken": csrfToken },
+      credentials: 'include'
     }
-
-    return (
-        <div className="App">
-        {!session ? <Interface />
-            : <Access state='nahfam'/>
+    fetch('http://localhost:8000/test/', options)
+      .then(response => response.json())
+      .then(data => {
+        if (data.isAuthenticated === 'success') {
+          setSession(true);
+          console.log(data)
         }
+        else {
+          setSession(false);
+          console.log(data)
+        }
+      })
+  }
 
-        { /* Test Button just to switch between session states */ }
-        <button onClick={testBtn}>Test Sign In</button>
+  useEffect(() => {
+    checkSession()
+  })
+  
+    return (
+      <div className="App">
 
-        </div>
+        <Upload />
+        
+        {/* {session ? <Interface />
+            : <Access state='nahfam'/>
+        } */}
+        
+      </div>
     );
 }
 

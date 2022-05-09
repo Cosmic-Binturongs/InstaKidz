@@ -29,7 +29,8 @@ function Interface(props) {
         <Route path="/profile" element={<Timeline state={'profilePosts'} />} />
         <Route path="/upload" element={<h1>UPLOAD THING</h1>} />
       </Routes>
-      <Button name={'Logout'} onClick={logOut}/>
+      <Button name={'Logout'} onClick={logOut} />
+      <Timeline />
       
       
     </div>
