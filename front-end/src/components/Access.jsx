@@ -81,15 +81,6 @@ function Access() {
         console.log(avatar)
     }
 
-
-  
-  const onSubmit = e => { 
-    e.preventDefault();
-
-    if (password === confirmPassword) {
-      
-    }
-    }
     return (
         <div className='access'>
         {access ? 
