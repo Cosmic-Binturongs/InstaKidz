@@ -17,12 +17,8 @@ class PhotoUserSerializer(serializers.ModelSerializer):
 
 
 class PhotoSerializer(serializers.ModelSerializer):
-    user = PhotoUserSerializer()
 
     class Meta:
+        user = PhotoUserSerializer({'read_only': True})
         model = Photo
         fields = '__all__'
-
-    def create(self, validated_data):
-        user = User.objects.create_user(**validated_data)
-        return user
