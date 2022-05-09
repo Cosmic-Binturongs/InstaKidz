@@ -37,7 +37,6 @@ function Access() {
         }
     }
 
-<<<<<<< HEAD
 
     /* LoginSubmitBtn function will set the loginInfo state to the login Object */
     let loginSubmitBtn = (e) => {
@@ -86,8 +85,6 @@ function Access() {
     }
 
     /* For some reason if you console.log() the info States when you submit, it doesn't update immediately */
-=======
->>>>>>> main
     return (
         <div className='access'>
         {access ? 

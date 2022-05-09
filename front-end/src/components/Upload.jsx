@@ -5,7 +5,7 @@ function Upload({session}) {
     //let [uploadInfo, setUpload] =  useState({})
 
     let csrfToken = null
-    const fetchCookie =()=> {
+    const fetchCookie = () => {
         fetch('http://localhost:8000/csrf-cookie/', { credentials: 'include' })
         .then(response=> { 
             csrfToken = getCookie('csrftoken') 
