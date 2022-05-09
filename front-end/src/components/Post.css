@@ -1,0 +1,89 @@
+.post-container {
+  padding: 20px;
+}
+
+.tab-container {
+  height: 30px;
+  display: absolute;
+}
+
+.username-tab {
+  background: #1F448F;
+  border-radius: 30px 30px 0px 0px;
+  height: 30px;
+  width: 214px;
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.username-tab-text {
+  padding-left: 20px;
+}
+
+.delete-tab {
+  border-radius: 30px 30px 0px 0px;
+  height: 30px;
+  width: 300px;
+  background: #3366CC;
+  z-index: auto;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.delete-button {
+  padding-right: 20px;
+  padding-top: 23px;
+  font-size: 18px;
+  margin-top: 0;
+  cursor: pointer;
+  font-family: 'Rodfellows Wacky';
+  color: #FFA71D;
+}
+
+.delete-button:hover {
+  color: #CC0000;
+}
+
+.post-body {
+  background: #1F448F;
+  border-radius: 0px 0 30px 30px;
+  width: 300px;
+  position: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-img {
+  padding-top: 20px;
+  height: 260px;
+  width: 260px;
+}
+
+.post-bio {
+  padding: 0 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.timestamp {
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  background: #3366CC;
+  border-radius: 8px;
+  text-align: center;
+  color: #86AEFF;
+  width: 240px;
+  padding: 3px 10px;
+}

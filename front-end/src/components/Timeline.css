@@ -96,7 +96,6 @@ body {
   height: 500px;
   width: 600px;
   background-color: lightgray;
-  /* border-radius: 15px; */
   border-left: 3px solid #1F448F;
   border-top: 4px solid #1F448F;
   background: #6699FF;
@@ -118,17 +117,14 @@ body {
   justify-content: space-evenly;
 }
 
-/* width */
 .window::-webkit-scrollbar {
   width: 20px;
 }
 
-/* Track */
 .window::-webkit-scrollbar-track {
   background: #86AEFF;
 }
 
-/* Handle */
 .window::-webkit-scrollbar-thumb {
   background: #1F448F;
   border: 2px solid #527FDC;

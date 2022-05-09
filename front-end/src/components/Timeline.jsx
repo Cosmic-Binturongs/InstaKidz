@@ -2,23 +2,22 @@
  */
 
 //import React, {useState, useEffect} from 'react'
-import Navbar from './Navbar.jsx'
-import Post from './Post.jsx'
+import Navbar from "./Navbar.jsx";
+import Post from "./Post.jsx";
 
 function Timeline(props) {
   //functions go hyah
-  console.log(props.posts)
+  console.log(props.posts);
   return (
-    <div className='timeline'>
+    <div class="window">
       <Navbar />
-      <div className='Post'>
+      <div class="Post">
         {props.posts.map((post, i) => (
           <Post key={i} post={post} />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Timeline
-
+export default Timeline;
