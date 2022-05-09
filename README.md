@@ -117,7 +117,7 @@ We've deployed our front-end to Netlify so that it automatically updates wheneve
 
 Images are hosted on Amazon S3. Actual image data is sent to Amazon S3, which returns a url to be stored in our server as a string.
 
-Upon user selection on the front-end, Django confirms that the image is within certain file and size parameters, notifying the user. If the image meets those parameters then the user may select another image or proceed, which triggers the upload to S3. If it does not meet the file type and size requirements, the user must select another image or navigate to another page.
+Upon user selection on the front-end, Django confirms that the image is within certain file and size parameters, notifying the user. If the image meets those parameters then the user may select another image or proceed, which triggers the upload to S3. If it does not meet the file type and size requirements, the user must select a different image or navigate to another page.
 
 As the image is succesfully uploading to S3 and the url is being generated, a loading state is displayed.
 
