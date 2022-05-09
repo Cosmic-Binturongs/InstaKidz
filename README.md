@@ -8,6 +8,8 @@ Instakidz is a place for kids to hang out together in a safe, fun, and secure en
 
 ### Dummy Demo Site
 
+https://main.d3qcrw68f6vjvz.amplifyapp.com/
+
 ### Deployed Site
 
 https://www.instakidz.com/
