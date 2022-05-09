@@ -1,16 +1,12 @@
-# Instagram Kidz
+# Instakidz 🕵🏾‍♂️👧🏻
 
-### Description
+## Description
 
 Instakidz is a place for kids to hang out together in a safe, fun, and secure environment away from weirdos and the big bad mean INTERNET >=[. This app was designed in Figma and utilizes Python & Django for authentication, PostgresSQL to handle the database models, React for visually functional components and dynamically rendered states, and lastly Amazon S3 for image hosting.
 
-## Relevant Links
+# Instakidz Relevant Links
 
-### Dummy Demo Site
-
-https://main.d3qcrw68f6vjvz.amplifyapp.com/
-
-### Deployed Site
+### Website Domain Link
 
 https://www.instakidz.com/
 
@@ -18,7 +14,7 @@ https://www.instakidz.com/
 
 https://slothstagram.herokuapp.com/
 
-## Technologies Used
+# Technologies Used
 
 <p float="left">
 <img src="https://img.icons8.com/fluency/48/000000/python.png"/>
@@ -96,7 +92,7 @@ npm install
 
 This command will install all of the dependencies we are using for this project which is located in the package.json file at the root of our front-end directory.
 
-## Routes
+# Routes
 
 | Method | Endpoint | Description           |
 | ------ | -------- | --------------------- |
@@ -105,7 +101,7 @@ This command will install all of the dependencies we are using for this project 
 | `POST` | /photos  | Creates one photo.    |
 | `POST` | /user    | Creates one user.     |
 
-## Back-end Deployment
+# Back-end Deployment
 
 In order to deploy any changes to the back-end we need to run the following command:
 
@@ -113,11 +109,11 @@ In order to deploy any changes to the back-end we need to run the following comm
 git subtree --prefix back-end/ origin main
 ```
 
-## Front-end Deployment
+# Front-end Deployment
 
 We've deployed our front-end to Netlify so that it automatically updates whenever there is a merge into the main branch.
 
-## Image Hosting
+# Image Hosting
 
 Images are hosted on Amazon S3. Actual image data is sent to Amazon S3, which returns a url to be stored in our server as a string.
 
