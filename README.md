@@ -1,8 +1,18 @@
-# Slothstagram
+# Instakidz 🕵🏾‍♂️👧🏻
 
 ## Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Instakidz is a place for kids to hang out together in a safe, fun, and secure environment away from weirdos and the big bad mean INTERNET >=[. This app was designed in Figma and utilizes Python & Django for authentication, PostgresSQL to handle the database models, React for visually functional components and dynamically rendered states, and lastly Amazon S3 for image hosting.
+
+## Instakidz Relevant Links
+
+# Website Domain Link
+
+https://www.instakidz.com/
+
+# Back-end Link
+
+https://slothstagram.herokuapp.com/
 
 ## Technologies Used
 
@@ -84,7 +94,12 @@ This command will install all of the dependencies we are using for this project 
 
 ## Routes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+| Method | Endpoint | Description           |
+| ------ | -------- | --------------------- |
+| `GET`  | /photos  | Retrieves all photos. |
+| `GET`  | /user    | Retrieves all users.  |
+| `POST` | /photos  | Creates one photo.    |
+| `POST` | /user    | Creates one user.     |
 
 ## Back-end Deployment
 
@@ -100,7 +115,13 @@ We've deployed our front-end to Netlify so that it automatically updates wheneve
 
 ## Image Hosting
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Iamges are hosted on Amazon S3. Actual image data is sent to AmazonS3, which returns a url to be stored in our server as a string.
+
+Upon user selection on the front-end, Django confirms that the image is withing certain file and size paramteres, notifying the user. Upon success, they may select another image or proceed, triggering the upload to S3. Upon failure, they must select another image or navigate away from the page.
+
+A loading state is displayed awaiting successful upload to S3 and download of outputted url.
+
+Upon successful receipt of url string by website back-end, the user is navigated to the home page, where they can see that their post is the newest addition to the post stack.
 
 # Meet the Team
 
