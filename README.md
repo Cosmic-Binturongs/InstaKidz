@@ -163,3 +163,7 @@ Tyler Lane (they/them)
 `Contributor:` Andrew Manuel (he/him)
 
 [![](https://github.com/drainodrew.png?size=100)](https://github.com/drainodrew)
+
+`Contributor:` <a href="https://github.com/NasimAkbor">Nasim Akbor (he/him)</a>
+
+`Contributor:` <a href="https://github.com/Jtiv">James Thompson (he/him)</a>
