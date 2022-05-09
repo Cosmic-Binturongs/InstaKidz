@@ -81,7 +81,6 @@ function Access() {
         console.log(avatar)
     }
 
-
     return (
         <div className='access'>
         {access ? 
