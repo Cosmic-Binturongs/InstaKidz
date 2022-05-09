@@ -9,8 +9,9 @@ function App() {
   /* Session state will determine between logged in or not */
   
   const [profile, setProfile] = useState('empty');
-    let [session, setSession] = useState(false);
-    const testBtn = (e) => {
+  const [session, setSession] = useState(false);
+  
+  const testBtn = (e) => {
         setSession(sesh => !sesh)
     }
 
