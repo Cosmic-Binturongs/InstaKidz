@@ -66,7 +66,7 @@ ROOT_URLCONF = 'slothstagram.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [], #[os.path.join(BASE_DIR, 'build')],
+        'DIRS': [],  # [os.path.join(BASE_DIR, 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,6 +86,7 @@ WSGI_APPLICATION = 'slothstagram.wsgi.application'
 CORS_ALLOWED_ORIGINS = [
     "https://www.instakidz.com",
     "http://localhost:8080",
+    "http://localhost:5500",
 ]
 
 # Database
@@ -146,12 +147,12 @@ STATIC_URL = 'static/'
 
 
 REST_FRAMEWORK = {
-  'DEFAULT_PERMISSION_CLASSES': [
-    'rest_framework.permissions.IsAuthenticated',
-  ],
-   'DEFAULT_AUTHENTICATION_CLASSES': [
-    'rest_framework.authentication.SessionAuthentication',
-  ]
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ]
 }
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -159,7 +160,7 @@ REST_FRAMEWORK = {
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Authentication Settings 
+# Authentication Settings
 CSRF_COOKIE_HTTPONLY = False
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
@@ -174,4 +175,3 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_VERIFY = True
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
