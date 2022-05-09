@@ -138,6 +138,9 @@ Tyler Lane (they/them)
 
 [![](https://github.com/officecowboy.png?size=100)](https://github.com/officecowboy)
 
+`Contributor:` James Thompson (he/him)
+
+[![](https://github.com/Jtiv.png?size=100)](https://github.com/Jtiv)
 
 `Contributor:` Melissa Minh Tran (she/her)
 
@@ -165,5 +168,3 @@ Tyler Lane (they/them)
 [![](https://github.com/drainodrew.png?size=100)](https://github.com/drainodrew)
 
 `Contributor:` <a href="https://github.com/NasimAkbor">Nasim Akbor (he/him)</a>
-
-`Contributor:` <a href="https://github.com/Jtiv">James Thompson (he/him)</a>
