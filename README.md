@@ -115,13 +115,13 @@ We've deployed our front-end to Netlify so that it automatically updates wheneve
 
 ## Image Hosting
 
-Iamges are hosted on Amazon S3. Actual image data is sent to AmazonS3, which returns a url to be stored in our server as a string.
+Images are hosted on Amazon S3. Actual image data is sent to Amazon S3, which returns a url to be stored in our server as a string.
 
-Upon user selection on the front-end, Django confirms that the image is withing certain file and size paramteres, notifying the user. Upon success, they may select another image or proceed, triggering the upload to S3. Upon failure, they must select another image or navigate away from the page.
+Upon user selection on the front-end, Django confirms that the image is within certain file and size parameters, notifying the user. If the image meets those parameters then the user may select another image or proceed, which triggers the upload to S3. If it does not meet the file type and size requirements, the user must select another image or navigate to another page.
 
-A loading state is displayed awaiting successful upload to S3 and download of outputted url.
+As the image is succesfully uploading to S3 and the url is being generated, a loading state is displayed.
 
-Upon successful receipt of url string by website back-end, the user is navigated to the home page, where they can see that their post is the newest addition to the post stack.
+Upon successful receipt of the url string to the back-end, the user is routed to the home page, where they can see that their post is the newest addition to the post stack.
 
 # Meet the Team
 
@@ -138,7 +138,6 @@ Tyler Lane (they/them)
 
 [![](https://github.com/officecowboy.png?size=100)](https://github.com/officecowboy)
 
-`Contributor:` James Thompson (he/him)
 
 `Contributor:` Melissa Minh Tran (she/her)
 
@@ -152,7 +151,6 @@ Tyler Lane (they/them)
 
 [![](https://github.com/johndreamfuture.png?size=100)](https://github.com/johndreamfuture)
 
-`Contributor:` Nasim Akbor (he/him)
 
 `Contributor:` Kevin Lin (he/him)
 
