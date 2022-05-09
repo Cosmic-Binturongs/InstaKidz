@@ -1,16 +1,20 @@
-# Instakidz 🕵🏾‍♂️👧🏻
+# Instagram Kidz
 
-## Description
+### Description
 
 Instakidz is a place for kids to hang out together in a safe, fun, and secure environment away from weirdos and the big bad mean INTERNET >=[. This app was designed in Figma and utilizes Python & Django for authentication, PostgresSQL to handle the database models, React for visually functional components and dynamically rendered states, and lastly Amazon S3 for image hosting.
 
-# Instakidz Relevant Links
+## Relevant Links
 
-## Website Domain Link
+### Dummy Demo Site
+
+https://main.d3qcrw68f6vjvz.amplifyapp.com/
+
+### Deployed Site
 
 https://www.instakidz.com/
 
-## Back-end Link
+### Back-end Link
 
 https://slothstagram.herokuapp.com/
 
