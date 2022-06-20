@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import getCookie from '../get-cookie.js';
-//import './Upload.css';
+import './Upload.css';
 
 function Upload() {
   // let [uploadInfo, setUpload] =  useState({})
@@ -28,7 +28,7 @@ function Upload() {
     }
 
     fetch('http://localhost:8000/login/', options)
-    .then( response=> { 
+    .then( response => { 
         csrfToken = getCookie('csrftoken') 
         console.log(csrfToken)
     })
@@ -36,17 +36,16 @@ function Upload() {
     
   useEffect(() => {
     fetchCookie();
-  }, [])
+  })
 
 
   let handleSubmit = (e) => {
         e.preventDefault()
-    image.current.focus();
         let formData = new FormData()
         formData.append('caption', e.target.caption.value)
         formData.append('image', image.current)
       //will this require us carry the state of the user?
-        formData.append('user', 1)
+        formData.append('user', 2)
         formData.append('csrfmiddlewaretoken', csrfToken)
 
         let options = {
@@ -64,9 +63,9 @@ function Upload() {
 
 
     return (
-      <div class="uploadDiv">
+      <div className="uploadDiv">
       <form onSubmit={handleSubmit} ref={image}>
-        <input id="image-input" type="file" name="photo" class="style-this"/>
+        <input id="image-input" type="file" name="photo" className="style-this"/>
         <input id='img-caption' type='text' name='caption' placeholder='Caption'/>
         <input type='submit'/>
       </form>
@@ -74,7 +73,7 @@ function Upload() {
       <h1>Add Memory</h1>
       <p>Click to upload image</p>
       <p>(5MB Maximum, JPEG and PNG supported)</p>
-      <p class="h1">Upload Image</p>
+      <p className="h1">Upload Image</p>
       </div> 
     )
 }
