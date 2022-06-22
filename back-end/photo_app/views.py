@@ -1,14 +1,38 @@
+from django.views.decorators.http import require_POST
+from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
+from django.http import HttpResponse, JsonResponse
+from django.contrib.auth import authenticate, login, logout
+import json
 from rest_framework import viewsets, permissions
 from rest_framework.views import APIView
 from .serializers import UserSerializer, PhotoSerializer
 from django.contrib.auth.models import User
 from .models import Photo, Profile
 from django.utils.decorators import method_decorator
+from rest_framework.decorators import action
 
+
+# class PhotoViewSet(viewsets.ModelViewSet):
+#     queryset = Photo.objects.all()
+#     serializer_class = PhotoSerializer
+
+#     def post(self, request):
+#         file = request.data["file"]
+#         image = Photo.objects.create(image=file)
+#         return JsonResponse({"message": "Uploaded"})
 
 class PhotoViewSet(viewsets.ModelViewSet):
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
+
+    @action(detail=True, methods=['post'])
+    def upload_docs(request):
+        try:
+            file = request.data['file']
+        except KeyError:
+            raise JsonResponse(
+                {'message': 'Request has no resource file attached'})
+        photo = Photo.objects.create(image=file)
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -16,15 +40,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-import json
-
-from django.contrib.auth import authenticate, login, logout
-from django.http import JsonResponse
-from django.views.decorators.csrf import ensure_csrf_cookie, csrf_protect
-from django.views.decorators.http import require_POST
-
-
-@method_decorator(csrf_protect, name="dispatch")
+@ method_decorator(csrf_protect, name="dispatch")
 class CheckAuthView(APIView):
     def get(self, request, format=None):
         try:
